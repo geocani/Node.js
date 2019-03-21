@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style-todo.css">
+        <style>
+            body{background:rgb(192, 182, 196);}
+            h1{text-align:center;padding:50px 0 50px 0;}
+            .check-todo{padding: 20px 0 20px 0;margin:auto;}
+            .check-todo ul li{list-style:none;}
+            .form-todo{border: 3px solid red;margin:auto;}
+            label{margin:auto;}
+            input{margin:auto;}
+            .del{color:rgb(54, 54, 54);}
+            .del:hover{color:red;}
+            a{text-decoration: none;}
+            .mod{color:green;}
+            .image1{background:rgb(255, 145, 0);height:100px;text-align: center;padding-top:30px;color:white;}
+            .image2{background:rgb(0, 255, 157);height:100px;text-align: center;padding-top:30px;color:white;}
+            .image3{background:rgb(0, 195, 255);height:100px;text-align: center;padding-top:30px;color:white;}
+            .color1{color:rgb(255, 145, 0);}
+            .color2{color:rgb(0, 255, 157);}
+            .color3{color:rgb(0, 195, 255);}
+            .card{box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);}
+            .btn-color1{background:rgb(255, 145, 0); }
+            .btn-color2{background:rgb(0, 255, 157); }
+            .btn-color3{background:rgb(0, 195, 255); }
+            .apadd{padding-right:10px;}
+            li{transition:0.5s;}
+            li:hover{font-weight:bolder;transition: 0.5s;}
+
+        </style>
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <div class="container">
+            <!--TITRE-->
+            <div class="titre">
+                <h1>ToDoList simple avec node.js</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <!--TODO 1-->
+                    <div class="card" style="width: 18rem;">
+                        <div class="image1">
+                            <!-- <img class="card-img-top" src="test.jpg" alt="Card image cap"> -->
+                            <h2>TODO UN</h2>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Théme 1</h5>
+                            <p class="card-text">Un descriptif de la todolist <strong class="color1">un</strong>, juste pour y voir plus clair.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <% todolist.forEach(function(todo, index) { %>
+                            <li class="list-group-item"><a class="color1 apadd" href="/todo/supprimer/<%= index %>">&#9998;</a><a class="del apadd" href="/todo/supprimer/<%= index %>">✘</a> <%= todo %></li>
+                            <% }); %>
+                        </ul>
+                        <div class="card-body">
+                            <form class="" action="/todo/ajouter/" method="post">
+                                <input type="text" name="newtodo" id="newtodo" autofocus placeholder="Que dois-je faire?"/>
+                                <button type="submit" class="btn btn-color1">OK</button> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <!--TODO 2-->
+                    <div class="card" style="width: 18rem;">
+                        <div class="image2">
+                            <!-- <img class="card-img-top" src="test.jpg" alt="Card image cap"> -->
+                            <h2>TODO DEUX</h2>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Théme 2</h5>
+                            <p class="card-text">Un descriptif de la todolist <strong class="color2">deux</strong>, juste pour y voir plus clair.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <% todolist.forEach(function(todo, index) { %>
+                            <li class="list-group-item"><a class="color2 apadd" href="/todo/supprimer/<%= index %>">&#9998;</a><a class="del apadd" href="/todo/supprimer/<%= index %>">✘</a> <%= todo %></li>
+                            <% }); %>
+                        </ul>
+                        <div class="card-body">
+                            <form class="" action="/todo/ajouter/" method="post">
+                                <input type="text" name="newtodo" id="newtodo" autofocus placeholder="Que dois-je faire?"/>
+                                <button type="submit" class="btn btn-color2">OK</button> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <!--TODO 3-->
+                    <div class="card" style="width: 18rem;">
+                        <div class="image3">
+                            <!-- <img class="card-img-top" src="test.jpg" alt="Card image cap"> -->
+                            <h2>TODO TROIS</h2>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Théme 3</h5>
+                            <p class="card-text">Un descriptif de la todolist <strong class="color3">trois</strong>, juste pour y voir plus clair.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <% todolist.forEach(function(todo, index) { %>
+                            <li class="list-group-item"><a class="color3 apadd" href="/todo/supprimer/<%= index %>">&#9998;</a><a class="del apadd" href="/todo/supprimer/<%= index %>">✘</a> <%= todo %></li>
+                            <% }); %>
+                        </ul>
+                        <div class="card-body">
+                            <form class="" action="/todo/ajouter/" method="post">
+                                <input type="text" name="newtodo" id="newtodo" autofocus placeholder="Que dois-je faire?"/>
+                                <button type="submit" class="btn btn-color3">OK</button> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!--ROW -->
+        </div><!--CONTAINER-->
+    <!--JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
